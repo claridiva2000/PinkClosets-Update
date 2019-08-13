@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const signin = props => {
+const gallery = props => {
   return (
     <div>
-      Signin
+      Gallery
     </div>
   )
 }
 
-signin.propTypes = {
+gallery.propTypes = {
 
 }
 
-export default signin
+export default gallery

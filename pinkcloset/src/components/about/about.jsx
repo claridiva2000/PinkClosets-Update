@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const signin = props => {
+const about = props => {
   return (
     <div>
-      Signin
+      about
     </div>
   )
 }
 
-signin.propTypes = {
+about.propTypes = {
 
 }
 
-export default signin
+export default about
