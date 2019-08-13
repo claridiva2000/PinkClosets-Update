@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 //routes
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //redirect
 import PrivateRoute from './components/routing/privateroute';
 //components
@@ -16,11 +16,8 @@ import Signin from './components/auth/signin';
 import Dashboard from './components/admin/dashboard';
 import NewAdmin from './components/admin/addadmin';
 
-
-
 //redux
 // import {Provider} from 'react-redux';
-
 
 import './App.css';
 
@@ -28,20 +25,20 @@ function App() {
   return (
     // <Provider >
     <Router>
-    <div className="App" style={{fontFamily: 'Cinzel,Serif'}}>
-   <Navbar/>
-   <Switch>
-     <Route exact path='/' component={Home}/>
-     <Route exact path='/about' component={About}/>
-     <Route exact path='/services' component={Services}/>
-     <Route exact path='/gallery' component={Gallery}/>
-     <Route exact path='/blog' component={Blog}/>
-     <Route exact path='/contact' component={Contact}/>
-     <Route exact path='/signin' component={Signin}/>
-    <PrivateRoute exact path='/dashboard' component={Dashboard}/>
-
-   </Switch>
-    </div>
+      <div className="App" style={{ fontFamily: 'Cinzel,Serif' }}>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/signin" component={Signin} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/addadmin" component={NewAdmin} />
+        </Switch>
+      </div>
     </Router>
     // </Provider>
   );
