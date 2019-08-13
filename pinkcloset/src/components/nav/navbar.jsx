@@ -4,10 +4,10 @@ import {NavLink, Link} from 'react-router-dom';
 
 const navbar = () => {
   return (
-    <div style={{ background: '#EED6DC'}}>
+    <div style={{ background: '#EED6DC', borderBottom:'1px solid'}}>
       <nav style={{ listStyle:'none', }}>
-        <Logo/>
-        <ul style={{display:'flex',listStyle:'none', justifyContent: 'space-between', width: '700px', margin: 'auto' }}>
+        <Logo />
+        <ul style={{display:'flex',listStyle:'none', justifyContent: 'space-between', width: '850px', margin: 'auto', marginTop:'10px', fontSize: '1rem', textAlign: 'center', padding:'0px'}}>
           <li><NavLink to='/' style={navlinkStyle} activeStyle={activelinkStyle} >Home</NavLink></li>
           <li><NavLink to='/about' style={navlinkStyle} activeStyle={activelinkStyle}>About</NavLink></li>
           <li><NavLink to='/services' style={navlinkStyle} activeStyle={activelinkStyle}>Services</NavLink></li>

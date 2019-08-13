@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PrivateRoute from './components/routing/privateroute';
 //components
 import Navbar from './components/nav/navbar';
+import BottomNav from './components/nav/bottomnav';
 import Home from './components/home/Home';
 import About from './components/about/about';
 import Services from './components/services/services';
@@ -38,6 +39,7 @@ function App() {
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/addadmin" component={NewAdmin} />
         </Switch>
+        <BottomNav/>
       </div>
     </Router>
     // </Provider>
