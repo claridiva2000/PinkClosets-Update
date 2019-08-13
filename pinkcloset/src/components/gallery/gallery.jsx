@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Home = props => {
+const gallery = props => {
   return (
     <div>
-      Home
+      Gallery
     </div>
   )
 }
 
-Home.propTypes = {
+gallery.propTypes = {
 
 }
 
-export default Home
+export default gallery
