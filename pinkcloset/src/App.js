@@ -12,19 +12,21 @@ import Services from './components/services/services';
 import Gallery from './components/gallery/gallery';
 import Blog from './components/blog/Blogposts';
 import Contact from './components/contact/contact';
+import NotFound from './components/routing/NotFound';
 
 import Signin from './components/auth/signin';
 import Dashboard from './components/admin/dashboard';
-import NewAdmin from './components/admin/addadmin';
+
 
 //redux
-// import {Provider} from 'react-redux';
+import {Provider} from 'react-redux';
+import store from './store';
 
 import './App.css';
 
 function App() {
   return (
-    // <Provider >
+    <Provider store={store} >
     <Router>
       <div className="App" style={{ fontFamily: 'Cinzel,Serif' }}>
         <Navbar />
@@ -35,14 +37,16 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/contact" component={Contact} />
+          
           <Route exact path="/signin" component={Signin} />
+          <Route component={NotFound}/>
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          <PrivateRoute exact path="/addadmin" component={NewAdmin} />
+          
         </Switch>
         <BottomNav/>
       </div>
     </Router>
-    // </Provider>
+    </Provider>
   );
 }
 
