@@ -12,37 +12,37 @@ function Navbar(){
       <nav>
         <Logo />
         <ul className={ menu? "navlinks" : "navlinks nav-active navLinkFade"}>
-          <li className={menu? "" : "navLinkFade"}>
+          <li className={menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/" activeStyle={activelinkStyle}>
               Home
             </NavLink>
           </li>
-          <li className={menu? "" : "navLinkFade"}>
+          <li className={menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/about"  activeStyle={activelinkStyle}>
               About
             </NavLink>
           </li>
-          <li className={ menu? "" : "navLinkFade"}>
+          <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/services" activeStyle={activelinkStyle}>
               Services
             </NavLink>
           </li>
-          <li className={ menu? "" : "navLinkFade"}>
+          <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/gallery" activeStyle={activelinkStyle}>
               Gallery
             </NavLink>
           </li>
-          <li className={ menu? "" : "navLinkFade"}>
+          <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/blog" activeStyle={activelinkStyle}>
               Blog
             </NavLink>
           </li>
-          <li className={ menu? "" : "navLinkFade"}>
+          <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/contact" activeStyle={activelinkStyle}>
               Contact
             </NavLink>
           </li>
-          <li className={ menu? "" : "navLinkFade"}>
+          <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
             <NavLink to="/signin" activeStyle={activelinkStyle}>
               Admin
             </NavLink>
