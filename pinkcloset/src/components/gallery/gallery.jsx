@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+
 
 const gallery = props => {
   return (
@@ -9,8 +9,6 @@ const gallery = props => {
   )
 }
 
-gallery.propTypes = {
 
-}
 
 export default gallery

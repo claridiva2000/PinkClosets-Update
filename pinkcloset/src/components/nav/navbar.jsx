@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import Logo from "./logo";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
+import auth0Client from '../../auth';
 import "./navbar.css";
 
 
-function Navbar(){
+function Navbar(props){
  const [menu, setMenu] = useState(true)
+
+const signOut =() =>{
+  auth0Client.signOut();
+  props.history.replace('/');
+}
 
   return (
     <div>
@@ -13,27 +19,27 @@ function Navbar(){
         <Logo />
         <ul className={ menu? "navlinks" : "navlinks nav-active navLinkFade"}>
           <li className={menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/" activeStyle={activelinkStyle}>
+            <NavLink to="/" activestyle={activelinkStyle}>
               Home
             </NavLink>
           </li>
           <li className={menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/about"  activeStyle={activelinkStyle}>
+            <NavLink to="/about"  activestyle={activelinkStyle}>
               About
             </NavLink>
           </li>
           <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/services" activeStyle={activelinkStyle}>
+            <NavLink to="/services" activestyle={activelinkStyle}>
               Services
             </NavLink>
           </li>
           <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/gallery" activeStyle={activelinkStyle}>
+            <NavLink to="/gallery" activestyle={activelinkStyle}>
               Gallery
             </NavLink>
           </li>
           <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/blog" activeStyle={activelinkStyle}>
+            <NavLink to="/blog" activestyle={activelinkStyle}>
               Blog
             </NavLink>
           </li>
@@ -43,9 +49,13 @@ function Navbar(){
             </NavLink>
           </li>
           <li className={ menu? "" : "navLinkFade"} onClick={()=> setMenu(!menu)}>
-            <NavLink to="/signin" activeStyle={activelinkStyle}>
+            { !auth0Client.isAuthenticated() && <p activestyle={activelinkStyle} onClick= {auth0Client.signIn} style={{cursor: 'pointer', color:'#955465'}}>
               Admin
-            </NavLink>
+            </p>} 
+            { auth0Client.isAuthenticated() && <p  activestyle={activelinkStyle} onClick={() => {signOut()}} style={{cursor: 'pointer', color:'#955465'}}>
+              Sign Out
+            </p>}  
+            
           </li>
         </ul>
         <div className="burger" onClick={()=> setMenu(!menu)}>
@@ -60,8 +70,8 @@ function Navbar(){
 
 
 
+export default withRouter(Navbar);
 
-export default Navbar;
 
 
 

@@ -1,12 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Newslettermenu from './newsletter/newslettermenu';
+import Blogmenu from './blogentries/blogmenu'
+import './dashboard.css';
 
 const Dashboard = () => {
+  
+
   return (
     <div>
-      This is the super secret admin dashboard. If this works you should see this message. 
+      <h2>Admin Dashboard</h2>
+      <Newslettermenu/>
+      <Blogmenu/>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
-
+export default Dashboard;

@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 //routes
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 //redirect
-import PrivateRoute from './components/routing/privateroute';
+import SecuredRoute from './components/auth/securedRoute';
 //components
 import Navbar from './components/nav/navbar';
 import BottomNav from './components/nav/bottomnav';
@@ -14,9 +14,9 @@ import Blog from './components/blog/Blogposts';
 import Contact from './components/contact/contact';
 import NotFound from './components/routing/NotFound';
 
-import Signin from './components/auth/signin';
-import Dashboard from './components/admin/dashboard';
 
+import Dashboard from './components/admin/dashboard';
+import Callback from './components/admin/callback';
 
 //redux
 import {Provider} from 'react-redux';
@@ -37,11 +37,13 @@ function App() {
           <Route exact path="/gallery" component={Gallery} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/contact" component={Contact} />
-          
-          <Route exact path="/signin" component={Signin} />
+
+
+     
+          <Route exact path="/callback" component={Callback} />
+          <SecuredRoute exact path="/dashboard" component={Dashboard} />
           <Route component={NotFound}/>
-          <PrivateRoute exact path="/dashboard" component={Dashboard} />
-          
+
         </Switch>
         <BottomNav/>
       </div>
