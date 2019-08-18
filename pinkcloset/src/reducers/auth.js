@@ -9,18 +9,13 @@ import {
 const initialState = {
   token: localStorage.getItem('token'),
   isAuthenticated: null,
-  loading: true,
- 
+  loading: true
 };
 
 export default function(state = initialState, action) {
   const { type, payload } = action;
   console.log(payload);
   switch (type) {
-   
-
-
-
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
       localStorage.setItem('token', payload.token);
@@ -31,10 +26,8 @@ export default function(state = initialState, action) {
         loading: false
       };
 
-   
-
     case REGISTER_FAIL:
- 
+      break
     case LOGIN_FAIL:
     case LOGOUT:
       localStorage.removeItem('token');

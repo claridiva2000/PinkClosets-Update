@@ -1,18 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+
 
 export class Blogposts extends Component {
-  static propTypes = {
-
-  }
+  static propTypes = {};
 
   render() {
-    return (
-      <div>
-        Blog
-      </div>
-    )
+    return <div>Blog</div>;
   }
 }
 
-export default Blogposts
+export default Blogposts;
